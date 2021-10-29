@@ -1,0 +1,17 @@
+﻿@model Product
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<form method="post" asp-action="Create" asp-controller="Product">
+    <div asp-validation-summary="All" />
+    <label>Type</label>
+    <input class="form-control" asp-for="Type" />
+    <span asp-validation-for="Type"></span>
+    <br />
+    <label>Cost</label>
+    <input class="form-control" asp-for="Cost" />
+    <span asp-validation-for="Cost"></span> <br />
+    <input class="btn btn-success" type="submit" title="Create" value="Create" />
+    <input class="btn btn-danger" type="reset" title="" value="Cancel" />
+</form>

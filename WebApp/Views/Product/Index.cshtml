@@ -1,0 +1,36 @@
+﻿@model List<Product>
+@using System.Threading
+<br />
+<a class="btn btn-primary" asp-controller="Product" asp-action="Create">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Cost</th>
+            <th>Insert Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>
+                    @product.Id
+                </td>
+                <td>
+                    @product.Type
+                </td>
+                <td>
+                    @product.Cost
+                </td>
+                <td>
+                    @product.InsertDate.ToString("dd/MM/yyyy HH:mm:ss")
+                </td>
+                <td><a class="btn btn-info" href="~/Product/Edit?id=@product.Id">Edit</a></td>
+                <td><a class="btn btn-danger" href="~/Product/Delete?id=@product.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
